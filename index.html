@@ -1,71 +1,65 @@
-<html>
-<head>
-<title>       </title>
-<style type="text/css">
-<!--
-h1	{text-align:center;
-	font-family:Arial, Helvetica, Sans-Serif;
-	}
+<script>
+ window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1435961229767387',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+    
+  
+   FB.Event.subscribe('messenger_checkbox', function(e) {
+      console.log("messenger_checkbox event");
+      console.log(e);
+      
+      if (e.event == 'rendered') {
+        console.log("Plugin was rendered");
+      } else if (e.event == 'checkbox') {
+        var checkboxState = e.state;
+        console.log("Checkbox state: " + checkboxState);
+      } else if (e.event == 'not_you') {
+        console.log("User clicked 'not you'");
+      } else if (e.event == 'hidden') {
+        console.log("Plugin was hidden");
+      }
+      
+    });    
 
-p	{text-indent:20px;
-	}
--->
-</style>
-<!-- ManyChat -->
-<script src="http://widget.itoldya.manychat.com/999638563473568.js" async="async">
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk')
+  );
+  
+  
+  
 </script>
-</head>
-<body bgcolor = "#ffffcc" text = "#000000">
-<h1>Hello, World!</h1>
 
-<p>You can modify the text in the box to the left any way you like, and
-then click the "Show Page" button below the box to display the
-result here. Go ahead and do this as often and as long as you like.</p>
 
-<div class="mcwidget-embed" data-widget-id="144"></div>
-
-<p>You can also use this page to test your Javascript functions and local
-style declarations. Everything you do will be handled entirely by your own
-browser; nothing you type into the text box will be sent back to the
-server.</p>
-	
-<div class="mcwidget-embed" data-widget-id="167"></div>
-
-<p>When you are satisfied with your page, you can select all text in the
-textarea and copy it to a new text file, with an extension of
-either <b>.htm</b> or <b>.html</b>, depending on your Operating System.
-This file can then be moved to your Web server.</p>
-	
-<div class="mcwidget-embed" data-widget-id="168"></div>
-
-<p>You can also use this page to test your Javascript functions and local
-style declarations. Everything you do will be handled entirely by your own
-browser; nothing you type into the text box will be sent back to the
-server.</p>
-	
-<p>You can also use this page to test your Javascript functions and local
-style declarations. Everything you do will be handled entirely by your own
-browser; nothing you type into the text box will be sent back to the
-server.</p>
-	
-<p>You can also use this page to test your Javascript functions and local
-style declarations. Everything you do will be handled entirely by your own
-browser; nothing you type into the text box will be sent back to the
-server.</p>
-
-<p>You can also use this page to test your Javascript functions and local
-style declarations. Everything you do will be handled entirely by your own
-browser; nothing you type into the text box will be sent back to the
-server.</p>
-	
-<p>You can also use this page to test your Javascript functions and local
-style declarations. Everything you do will be handled entirely by your own
-browser; nothing you type into the text box will be sent back to the
-server.</p>
-	
-<p>You can also use this page to test your Javascript functions and local
-style declarations. Everything you do will be handled entirely by your own
-browser; nothing you type into the text box will be sent back to the
-server.</p>
-</body>
-</html>
+        <!--suppress HtmlUnknownAttribute -->
+<div class="fb-messenger-checkbox"  
+  origin="http://dev.manychat.com"
+  page_id="322217448138095"
+  messenger_app_id="1435961229767387"
+  user_ref="-1299953342037457665" 
+  prechecked="true" 
+  allow_login="true" 
+  size="xlarge"></div>
+        <script>
+            function confirmOptIn() {
+              FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
+                'app_id':1435961229767387,
+                'page_id':322217448138095,
+                'ref' : 'sitewidget_188',
+                'user_ref':'-1299953342037457665'
+              });
+          }
+        </script>
+        <div>
+        <input type="button" onclick="confirmOptIn()" value="Confirm Opt-in"/>
+        </div>
+</div>
